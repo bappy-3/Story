@@ -2,6 +2,14 @@
 
 Express.js backend API server running on port 5000.
 
+## Features
+
+- Express.js for HTTP server
+- Prisma ORM 5.20.0 with PostgreSQL
+- TypeScript 5.3.3
+- CORS enabled for frontend communication
+- RESTful API design
+
 ## Setup
 
 1. Install dependencies:
@@ -25,7 +33,7 @@ npm run db:setup
 
 ## Running
 
-Start the development server:
+Start the development server (with hot reload via tsx):
 ```bash
 npm run dev
 ```
@@ -33,10 +41,22 @@ npm run dev
 Or start the production server:
 ```bash
 npm run build
-npm start
+npm run start
 ```
 
 The server will run on `http://localhost:5000`
+
+## Available Scripts
+
+- `npm run dev` - Start development server with tsx watch
+- `npm run build` - Build TypeScript to JavaScript
+- `npm run start` - Start production server
+- `npm run db:generate` - Generate Prisma client
+- `npm run db:push` - Push database schema
+- `npm run db:migrate` - Create a database migration
+- `npm run db:seed` - Seed database with sample data
+- `npm run db:setup` - Complete setup (generate, push, seed)
+- `npm run db:studio` - Open Prisma Studio
 
 ## API Endpoints
 

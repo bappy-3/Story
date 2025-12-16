@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 
 export default function HomePage() {
   return (
@@ -10,22 +10,18 @@ export default function HomePage() {
           <Badge variant="secondary" className="px-3 py-1">
             Next.js 14 + TypeScript
           </Badge>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            Full-Stack Monorepo
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
-            A modern full-stack application built with Next.js 14, TypeScript, TailwindCSS, 
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Full-Stack Monorepo</h1>
+          <p className="max-w-2xl text-xl text-muted-foreground">
+            A modern full-stack application built with Next.js 14, TypeScript, TailwindCSS,
             shadcn/ui, Zustand, and Prisma ORM with PostgreSQL.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl">
+        <div className="grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader>
               <CardTitle>🚀 Ready to Build</CardTitle>
-              <CardDescription>
-                Complete development environment setup
-              </CardDescription>
+              <CardDescription>Complete development environment setup</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -40,9 +36,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <CardTitle>💾 Database</CardTitle>
-              <CardDescription>
-                PostgreSQL with Prisma ORM
-              </CardDescription>
+              <CardDescription>PostgreSQL with Prisma ORM</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -57,9 +51,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <CardTitle>🎨 Modern UI</CardTitle>
-              <CardDescription>
-                Beautiful, responsive interface
-              </CardDescription>
+              <CardDescription>Beautiful, responsive interface</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -74,7 +66,13 @@ export default function HomePage() {
 
         <div className="flex gap-4">
           <Button size="lg" asChild>
-            <a href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/health`} target="_blank" rel="noopener noreferrer">API Health Check</a>
+            <a
+              href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/health`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              API Health Check
+            </a>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href="/dashboard">View Dashboard</a>

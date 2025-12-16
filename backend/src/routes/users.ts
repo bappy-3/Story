@@ -6,14 +6,6 @@ const router = Router()
 router.get('/', async (req, res) => {
   try {
     const users = await prisma.user.findMany({
-      include: {
-        profile: true,
-        photos: {
-          where: { isPrimary: true },
-          take: 1,
-        },
-        preferences: true,
-      },
       take: 50,
     })
 
@@ -26,18 +18,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { email, name, username } = req.body
-
-    if (!email) {
-      return res.status(400).json({ error: 'Email is required' })
-    }
-
     const user = await prisma.user.create({
-      data: {
-        email,
-        name,
-        username,
-      },
+      data: {},
     })
 
     res.status(201).json(user)
