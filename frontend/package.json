@@ -1,8 +1,8 @@
 {
-  "name": "next14-monorepo-fullstack",
+  "name": "story-frontend",
   "version": "0.1.0",
   "private": true,
-  "description": "Full-stack Next.js 14 monorepo with TypeScript, TailwindCSS, shadcn/ui, Zustand, and Prisma",
+  "description": "Frontend Next.js application for Story",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,20 +12,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "type-check": "tsc --noEmit",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:migrate:deploy": "prisma migrate deploy",
-    "db:studio": "prisma studio",
-    "db:reset": "prisma migrate reset",
-    "db:seed": "tsx prisma/seed.ts",
-    "db:setup": "npm run db:generate && npm run db:push && npm run db:seed",
     "ci": "npm run type-check && npm run lint && npm run format:check"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@next/font": "^14.0.4",
-    "@prisma/client": "^5.7.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -70,9 +61,7 @@
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
-    "prisma": "^5.7.1",
     "tailwindcss": "^3.4.0",
-    "tsx": "^4.6.2",
     "typescript": "^5.3.3"
   },
   "engines": {
@@ -80,3 +69,4 @@
     "npm": ">=9.0.0"
   }
 }
+

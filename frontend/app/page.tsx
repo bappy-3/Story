@@ -74,7 +74,7 @@ export default function HomePage() {
 
         <div className="flex gap-4">
           <Button size="lg" asChild>
-            <a href="/api/health">API Health Check</a>
+            <a href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/health`} target="_blank" rel="noopener noreferrer">API Health Check</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href="/dashboard">View Dashboard</a>

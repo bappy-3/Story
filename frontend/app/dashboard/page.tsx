@@ -4,7 +4,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 async function getUsers() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/users`, {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+  const response = await fetch(`${apiUrl}/api/users`, {
     cache: 'no-store'
   })
   
@@ -15,32 +16,32 @@ async function getUsers() {
   return response.json()
 }
 
-function UsersList() {
+async function UsersList() {
+  const users = await getUsers()
+  
   return (
     <Card>
       <CardHeader>
         <CardTitle>Users</CardTitle>
         <CardDescription>
-          Sample users from the database
+          Users from the database
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          {/* This would be populated by actual data */}
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <p className="text-sm font-medium leading-none">John Doe</p>
-              <p className="text-sm text-muted-foreground">john@example.com</p>
-            </div>
-            <Badge variant="secondary">Active</Badge>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <p className="text-sm font-medium leading-none">Jane Smith</p>
-              <p className="text-sm text-muted-foreground">jane@example.com</p>
-            </div>
-            <Badge variant="secondary">Active</Badge>
-          </div>
+          {users.length === 0 ? (
+            <p className="text-sm text-muted-foreground">No users found</p>
+          ) : (
+            users.map((user: any) => (
+              <div key={user.id} className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm font-medium leading-none">{user.name || 'No name'}</p>
+                  <p className="text-sm text-muted-foreground">{user.email}</p>
+                </div>
+                <Badge variant="secondary">Active</Badge>
+              </div>
+            ))
+          )}
         </div>
       </CardContent>
     </Card>

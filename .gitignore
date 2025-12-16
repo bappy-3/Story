@@ -71,6 +71,10 @@ node_modules/
 .nuxt
 dist
 
+# Backend build output
+backend/dist
+backend/node_modules
+
 # Storybook build outputs
 .out
 .storybook-out
